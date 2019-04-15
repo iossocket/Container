@@ -1,0 +1,93 @@
+# OSX
+#
+.DS_Store
+
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.dSYM.zip
+*.xcuserstate
+project.xcworkspace
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+
+# Bundle artifact
+*.jsbundle
+
+# TypeScript
+lib/
+
+# Jest
+#
+.jest/
+out1.png
+
+# Coverage reports
+coverage
+
+# Fabric
+fabric.properties
+
+set-env-var.sh
+
+#e2e screenshots
+artifacts/
+
+#e2e jest output files
+e2e/jest-android.json
+e2e/jest-ios.json
+
+#offline bundlers and assets
+ios/Bitesize/main.jsbundle
+ios/Bitesize/main.jsbundle.meta
+ios/Bitesize/assets/
+
+
+#Ignore output from bamboo-compatible jest report
+jest.json
+test-report.html
+e2e-test-report.html
+.env.dev
+build-info.props

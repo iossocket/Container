@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@android:drawable/ic_dialog_dialer"
+        android:title="Dashboard"/>
+
+    <item
+        android:id="@+id/navigation_inbox"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="Inbox"/>
+
+    <item
+        android:id="@+id/navigation_map"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="Map"/>
+</menu>
