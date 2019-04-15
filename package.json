@@ -1,0 +1,27 @@
+{
+  "name": "container",
+  "version": "1.0.0",
+  "description": "container",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "iossocket",
+  "license": "ISC",
+  "devDependencies": {
+    "detox": "^12.3.0",
+    "jest": "^24.7.1"
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/Container.app",
+        "build": "xcodebuild -workspace ios/Container.xcworkspace -scheme Container -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone X"
+      }
+    },
+    "test-runner": "jest",
+    "specs": ""
+  }
+}
