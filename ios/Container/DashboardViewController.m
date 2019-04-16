@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.title = @"Bookmarks";
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 120, 40)];
+    button.accessibilityLabel = @"show";
     [button setTitle:@"Show RN Page" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.view addSubview:button];

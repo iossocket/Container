@@ -8,6 +8,7 @@ export default class Page1 extends Component {
     headerLeft: (
       <TouchableOpacity 
         testID={"back-button"}
+        accessibilityLabel={"back-button"}
         style={{marginLeft: 12}}
         onPress={() => {
           RNNavigation.popToRoot();

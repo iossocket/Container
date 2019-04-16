@@ -45,12 +45,6 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
             }
             return false;
         });
-
-        mReactRootView = new RNGestureHandlerEnabledRootView(MainActivity.this);
-        mReactRootView.startReactApplication(
-                ((MainApplication)getApplication()).getReactNativeHost().getReactInstanceManager(),
-                "Home",
-                null);
         bottomNavigationView.setSelectedItemId(R.id.navigation_dashboard);
     }
 

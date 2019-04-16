@@ -31,12 +31,10 @@ public class DashboardFragment extends Fragment {
         toolbar.setTitle("Dashboard");
 
         this.showRNButton = view.findViewById(R.id.showRN);
-        this.showRNButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), ContainerActivity.class);
-                getActivity().startActivity(intent);
-            }
+        this.showRNButton.setContentDescription("show");
+        this.showRNButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), ContainerActivity.class);
+            getActivity().startActivity(intent);
         });
         return view;
     }
