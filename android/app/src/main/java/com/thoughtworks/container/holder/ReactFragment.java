@@ -69,7 +69,6 @@ public class ReactFragment extends Fragment implements PermissionAwareActivity {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         if (mReactRootView == null) {
-//            mReactRootView = new ReactRootView(getContext());
             mReactRootView = new RNGestureHandlerEnabledRootView(getActivity());
             mReactRootView.startReactApplication(
                     getReactNativeHost().getReactInstanceManager(),

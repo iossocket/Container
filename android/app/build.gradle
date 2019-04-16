@@ -14,7 +14,8 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testBuildType System.getProperty('testBuildType', 'debug')
     }
     buildTypes {
         release {
@@ -34,6 +35,9 @@ dependencies {
     implementation project(':flutter')
     implementation project(':react-native-gesture-handler')
     testImplementation 'junit:junit:4.12'
+
+    androidTestImplementation(project(path: ":detox"))
+    androidTestImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

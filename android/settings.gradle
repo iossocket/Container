@@ -3,5 +3,8 @@ include ':app'
 include ':react-native-gesture-handler'
 project(':react-native-gesture-handler').projectDir = new File(rootProject.projectDir, '../rn/node_modules/react-native-gesture-handler/android')
 
+include ':detox'
+project(':detox').projectDir = new File(rootProject.projectDir, '../node_modules/detox/android/detox')
+
 setBinding(new Binding([gradle: this]))
 evaluate(new File(settingsDir.parentFile, 'flutter/.android/include_flutter.groovy'))

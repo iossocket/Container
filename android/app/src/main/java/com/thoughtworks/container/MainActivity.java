@@ -1,15 +1,16 @@
 package com.thoughtworks.container;
 
-import android.support.annotation.NonNull;
+import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.MenuItem;
 
+import com.facebook.react.ReactRootView;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
+import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
+import com.thoughtworks.container.application.MainApplication;
 import com.thoughtworks.container.holder.ReactFragment;
 
 import io.flutter.facade.Flutter;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
     private ReactFragment inboxFragment;
     private MapFragment mapFragment;
     private FlutterFragment flutterFragment;
+    private ReactRootView mReactRootView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,24 +30,27 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
         setContentView(R.layout.activity_main);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                int itemId = menuItem.getItemId();
-                switch (itemId) {
-                    case R.id.navigation_dashboard:
-                        openFragment(getDashboardFragment());
-                        return true;
-                    case R.id.navigation_inbox:
-                        openFragment(getInboxFragment());
-                        return true;
-                    case R.id.navigation_map:
-                        openFragment(getFlutterFragment());
-                        return true;
-                }
-                return false;
+        bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
+            int itemId = menuItem.getItemId();
+            switch (itemId) {
+                case R.id.navigation_dashboard:
+                    openFragment(getDashboardFragment());
+                    return true;
+                case R.id.navigation_inbox:
+                    openFragment(getInboxFragment());
+                    return true;
+                case R.id.navigation_map:
+                    openFragment(getFlutterFragment());
+                    return true;
             }
+            return false;
         });
+
+        mReactRootView = new RNGestureHandlerEnabledRootView(MainActivity.this);
+        mReactRootView.startReactApplication(
+                ((MainApplication)getApplication()).getReactNativeHost().getReactInstanceManager(),
+                "Home",
+                null);
         bottomNavigationView.setSelectedItemId(R.id.navigation_dashboard);
     }
 

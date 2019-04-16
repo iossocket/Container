@@ -1,16 +1,31 @@
+function sleep(ms){
+  return new Promise(resolve=>{
+    setTimeout(resolve,ms);
+  });
+}
+
 describe('Example', () => {
   beforeEach(async () => {
     // await device.reloadReactNative();
   });
 
   it('detox example', async () => {
-    const button = element(by.text('Show RN Page'));
+    console.log('Begin $$$$$');
+    const button = await element(by.type('android.widget.Button'));
     await expect(button).toBeVisible();
-
+    
+    console.log("===>", button);
     await button.tap();
-    const backButton = element(by.id('back-button'));
-    await expect(backButton).toBeVisible();
-    await backButton.tap();
-    await expect(button).toBeVisible();
+    // done();
+    // process.nextTick(async () => {
+    //   const backButton = await element(by.id('back-button'));
+    //   await expect(backButton).toBeVisible();
+    //   done();
+    // });
+    
+    // await backButton.tap();
+    // await expect(button).toBeVisible();
   });
 }); 
+
+
