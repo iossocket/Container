@@ -9,6 +9,7 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - PodSample (0.0.1)
   - React (0.59.3):
     - React/Core (= 0.59.3)
   - React/Core (0.59.3):
@@ -66,6 +67,7 @@ DEPENDENCIES:
   - FlutterPluginRegistrant (from `../flutter/.ios/Flutter/FlutterPluginRegistrant`)
   - Folly (from `../rn/node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../rn/node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - PodSample
   - React/Core (from `../rn/node_modules/react-native`)
   - React/CxxBridge (from `../rn/node_modules/react-native`)
   - React/DevSupport (from `../rn/node_modules/react-native`)
@@ -81,6 +83,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - boost-for-react-native
+  https://github.com/iossocket/TWRepo.git:
+    - PodSample
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -103,14 +107,15 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
-  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
-  FlutterPluginRegistrant: 5f33f54e5f25444620ff39f2bdee4262d673ec7b
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  FlutterPluginRegistrant: 3f4d45b679eb21eb53e786e8884a26157555ce9f
   Folly: de497beb10f102453a1afa9edbf8cf8a251890de
   glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
-  React: 1d605e098d69bdf08960787f3446f0a9dc2e2ccf
-  RNGestureHandler: afde2addc517e85cc97a25bfe119acbee779a7ce
-  yoga: 128daf064cacaede0c3bb27424b6b4c71052e6cd
+  PodSample: 28b799dec39995a7f5a80ef0661491bdfd59cd40
+  React: b52fdb80565505b7e4592b313a38868f5df51641
+  RNGestureHandler: b65d391f4f570178d657b99a16ec99d09b8656b0
+  yoga: 1a492113f66a35e9e583bb0434f4b8cc668dd839
 
-PODFILE CHECKSUM: 0353b83d7f42078ef91bd4d5b4ca794a707d6f19
+PODFILE CHECKSUM: 2551765c7dff78cb7796ca9105bd0fc12abf941f
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

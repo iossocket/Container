@@ -5,6 +5,7 @@
 
 #import "DashboardViewController.h"
 #import "RNContrainer.h"
+#import "DemoViewController.h"
 
 @interface DashboardViewController ()
 
@@ -24,12 +25,25 @@
     button.center = self.view.center;
     
     [button addTarget:self action:@selector(showRN) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *nButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 160, 40)];
+    [nButton setTitle:@"Show Native Page" forState:UIControlStateNormal];
+    [nButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.view addSubview:nButton];
+    nButton.center = CGPointMake(self.view.center.x, self.view.center.y + 40);
+    
+    [nButton addTarget:self action:@selector(showNativePage) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)showRN {
     UIViewController *vc = [self.container viewControllerByRoute:@"App"];
     [self showViewController:vc sender:nil];
     
+}
+
+- (void)showNativePage {
+    UIViewController *vc = [DemoViewController new];
+    [self showViewController:vc sender:nil];
 }
 
 - (RNContrainer *)container {

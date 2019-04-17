@@ -11,6 +11,7 @@
 #import "DietViewController.h"
 #import "HistoryViewController.h"
 #import "RNContainer/RNContrainer.h"
+#import "DemoService.h"
 
 @interface AppDelegate ()
 
@@ -28,6 +29,9 @@
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
 
     tabBarController.viewControllers = [self tabBarViewControllers];
+    
+    DemoService *service = [DemoService new];
+    NSLog(@"%@", [service fetchSthFromDB]);
 
     self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];

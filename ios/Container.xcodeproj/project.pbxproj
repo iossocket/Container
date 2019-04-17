@@ -150,8 +150,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D95AF54222586F0700A3A9AF /* Build configuration list for PBXNativeTarget "Container" */;
 			buildPhases = (
-				D95AF601225ED36100A3A9AF /* ShellScript */,
 				FBCEDECCC4FC6365A3413E51 /* [CP] Check Pods Manifest.lock */,
+				D95AF601225ED36100A3A9AF /* ShellScript */,
 				D95AF52822586F0600A3A9AF /* Sources */,
 				D95AF52922586F0600A3A9AF /* Frameworks */,
 				D95AF52A22586F0600A3A9AF /* Resources */,
@@ -219,7 +219,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Container/Pods-Container-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Container/Pods-Container-frameworks.sh",
 				"${PODS_ROOT}/../../flutter/.ios/Flutter/engine/Flutter.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -230,7 +230,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Container/Pods-Container-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Container/Pods-Container-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D95AF601225ED36100A3A9AF /* ShellScript */ = {
