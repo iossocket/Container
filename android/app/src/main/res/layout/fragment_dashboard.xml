@@ -12,5 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Show RN Page" />
+    <Button
+        android:id="@+id/showNative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Native Page" />
 
 </LinearLayout>

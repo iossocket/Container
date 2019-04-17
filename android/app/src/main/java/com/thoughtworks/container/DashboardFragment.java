@@ -12,11 +12,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.thoughtworks.container.holder.ContainerActivity;
+import com.thoughtworks.samplelibrary.DemoActivity;
 
 public class DashboardFragment extends Fragment {
-
-    private Toolbar toolbar;
-    private Button showRNButton;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,17 +25,21 @@ public class DashboardFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        this.toolbar = view.findViewById(R.id.toolBar);
+        Toolbar toolbar = view.findViewById(R.id.toolBar);
         toolbar.setTitle("Dashboard");
 
-        this.showRNButton = view.findViewById(R.id.showRN);
-        this.showRNButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), ContainerActivity.class);
-                getActivity().startActivity(intent);
-            }
+        Button showRNButton = view.findViewById(R.id.showRN);
+        showRNButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), ContainerActivity.class);
+            getActivity().startActivity(intent);
         });
+
+        Button showNativeButton = view.findViewById(R.id.showNative);
+        showNativeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), DemoActivity.class);
+            getActivity().startActivity(intent);
+        });
+
         return view;
     }
 }

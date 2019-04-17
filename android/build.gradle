@@ -24,6 +24,9 @@ allprojects {
             // All of React Native (JS, Android binaries) is installed from npm
             url "$rootDir/../rn/node_modules/react-native/android"
         }
+        maven {
+            url "http://localhost:8081/artifactory/libs-release-local"
+        }
     }
 }
 

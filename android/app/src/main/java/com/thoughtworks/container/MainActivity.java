@@ -5,6 +5,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 
 import com.facebook.react.ReactRootView;
@@ -12,6 +13,7 @@ import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 import com.thoughtworks.container.application.MainApplication;
 import com.thoughtworks.container.holder.ReactFragment;
+import com.thoughtworks.samplelibrary.DemoService;
 
 import io.flutter.facade.Flutter;
 import io.flutter.facade.FlutterFragment;
@@ -28,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        DemoService service = new DemoService();
+        Log.d("======>", service.fetchSthFromDB());
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
