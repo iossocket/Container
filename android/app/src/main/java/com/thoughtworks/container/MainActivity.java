@@ -7,15 +7,13 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
-
-import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.thoughtworks.rnplugin.ReactFragment;
 import com.thoughtworks.samplelibrary.DemoService;
 
 import io.flutter.facade.Flutter;
 import io.flutter.facade.FlutterFragment;
 
-public class MainActivity extends AppCompatActivity implements DefaultHardwareBackBtnHandler {
+public class MainActivity extends AppCompatActivity {
 
     private DashboardFragment dashboardFragment;
     private ReactFragment inboxFragment;
@@ -65,7 +63,10 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
 
     public ReactFragment getInboxFragment() {
         if (inboxFragment == null) {
-            inboxFragment = new ReactFragment.Builder("Home").build();
+            inboxFragment = new ReactFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString(ReactFragment.COMPONENT_NAME, "Home");
+            inboxFragment.setArguments(bundle);
         }
         return inboxFragment;
     }
@@ -92,10 +93,5 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
             handled = ((ReactFragment) activeFragment).onKeyUp(keyCode, event);
         }
         return handled || super.onKeyUp(keyCode, event);
-    }
-
-    @Override
-    public void invokeDefaultOnBackPressed() {
-
     }
 }

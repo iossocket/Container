@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.facebook.infer.annotation.Assertions;
-import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactRootView;
@@ -25,7 +24,7 @@ import com.facebook.react.modules.core.PermissionAwareActivity;
 import com.facebook.react.modules.core.PermissionListener;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 
-public class ReactFragment extends Fragment implements PermissionAwareActivity {
+public class ReactFragment extends Fragment implements PermissionAwareActivity, DefaultHardwareBackBtnHandler {
 
     public static final String COMPONENT_NAME = "COMPONENT_NAME";
     public static final String LAUNCH_OPTIONS = "LAUNCH_OPTIONS";
@@ -108,7 +107,8 @@ public class ReactFragment extends Fragment implements PermissionAwareActivity {
         super.onResume();
         if (getReactNativeHost().hasInstance()) {
             getReactNativeHost().getReactInstanceManager()
-                    .onHostResume(activity, (DefaultHardwareBackBtnHandler)activity);
+                    .onHostResume(activity, this);
+
         }
     }
 
@@ -196,5 +196,10 @@ public class ReactFragment extends Fragment implements PermissionAwareActivity {
             }
         }
         return handled;
+    }
+
+    @Override
+    public void invokeDefaultOnBackPressed() {
+
     }
 }
