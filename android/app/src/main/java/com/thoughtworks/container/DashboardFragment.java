@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.thoughtworks.container.holder.ContainerActivity;
+import com.thoughtworks.rnplugin.ContainerActivity;
 import com.thoughtworks.samplelibrary.DemoActivity;
 
 public class DashboardFragment extends Fragment {

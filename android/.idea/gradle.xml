@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/rnplugin" />
             <option value="$PROJECT_DIR$/../flutter/.android/Flutter" />
             <option value="$PROJECT_DIR$/../node_modules/detox/android/detox" />
             <option value="$PROJECT_DIR$/../rn/node_modules/react-native-gesture-handler/android" />

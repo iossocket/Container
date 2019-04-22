@@ -34,6 +34,7 @@ dependencies {
     implementation 'com.thoughtworks.samplelibrary:samplelibrary:0.0.1'
     implementation("com.facebook.react:react-native:0.59.3")
     implementation project(':react-native-gesture-handler')
+    implementation project(':rnplugin')
     implementation project(':flutter')
 
     testImplementation 'junit:junit:4.12'

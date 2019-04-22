@@ -12,7 +12,7 @@ import com.facebook.react.ReactRootView;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 import com.thoughtworks.container.application.MainApplication;
-import com.thoughtworks.container.holder.ReactFragment;
+import com.thoughtworks.rnplugin.ReactFragment;
 import com.thoughtworks.samplelibrary.DemoService;
 
 import io.flutter.facade.Flutter;

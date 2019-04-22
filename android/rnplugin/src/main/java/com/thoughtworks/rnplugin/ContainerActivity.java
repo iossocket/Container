@@ -1,28 +1,26 @@
-package com.thoughtworks.container.holder;
+package com.thoughtworks.rnplugin;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
-import com.thoughtworks.container.application.MainApplication;
-
 
 public class ContainerActivity extends ReactActivity {
 
-    private MainApplication mainApplication;
+    private RNPluginApplication mainApplication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mainApplication = (MainApplication)this.getApplication();
+        mainApplication = (RNPluginApplication)this.getApplication();
     }
 
     protected void onResume() {
         super.onResume();
-        mainApplication.setCurrentRNActivity(this);
+        mainApplication.setCurrentActivity(this);
     }
     protected void onPause() {
         clearReferences();
@@ -34,9 +32,9 @@ public class ContainerActivity extends ReactActivity {
     }
 
     private void clearReferences(){
-        ContainerActivity currActivity = mainApplication.getCurrentRNActivity();
+        AppCompatActivity currActivity = mainApplication.getCurrentActivity();
         if (this.equals(currActivity))
-            mainApplication.setCurrentRNActivity(null);
+            mainApplication.setCurrentActivity(null);
     }
 
     @Override

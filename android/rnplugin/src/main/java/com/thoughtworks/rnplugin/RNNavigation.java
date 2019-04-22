@@ -1,9 +1,10 @@
-package com.thoughtworks.container.holder;
+package com.thoughtworks.rnplugin;
+
+import android.support.v7.app.AppCompatActivity;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.thoughtworks.container.application.MainApplication;
 
 import javax.annotation.Nonnull;
 
@@ -24,8 +25,8 @@ public class RNNavigation extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void popToRoot() {
-        MainApplication application = (MainApplication)mContext.getApplicationContext();
-        ContainerActivity activity = application.getCurrentRNActivity();
+        RNPluginApplication application = (RNPluginApplication)mContext.getApplicationContext();
+        AppCompatActivity activity = application.getCurrentActivity();
         if (activity != null) {
             activity.finish();
         }

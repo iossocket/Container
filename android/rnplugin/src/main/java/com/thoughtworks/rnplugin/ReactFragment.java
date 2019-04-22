@@ -1,4 +1,4 @@
-package com.thoughtworks.container.holder;
+package com.thoughtworks.rnplugin;
 
 import android.annotation.TargetApi;
 import android.content.Context;
