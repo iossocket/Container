@@ -1,11 +1,13 @@
 package com.thoughtworks.container.holder;
 
 import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,8 +27,8 @@ import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
 
 public class ReactFragment extends Fragment implements PermissionAwareActivity {
 
-    public static final String COMPONENT_NAME = "component_name";
-    public static final String LAUNCH_OPTIONS = "launch_options";
+    public static final String COMPONENT_NAME = "COMPONENT_NAME";
+    public static final String LAUNCH_OPTIONS = "LAUNCH_OPTIONS";
 
     private static ReactFragment newInstance(@NonNull String componentName, Bundle launchOptions) {
         ReactFragment fragment = new ReactFragment();
@@ -37,52 +39,75 @@ public class ReactFragment extends Fragment implements PermissionAwareActivity {
         return fragment;
     }
 
-    private String mComponentName;
-    private Bundle mLaunchOptions;
+    private AppCompatActivity activity;
+    private String componentName;
+    private Bundle launchOptions;
 
-    private ReactRootView mReactRootView;
+    private ReactRootView reactRootView;
+    private DoubleTapReloadRecognizer doubleTapReloadRecognizer;
+    private PermissionListener permissionListener;
 
-    @Nullable
-    private DoubleTapReloadRecognizer mDoubleTapReloadRecognizer;
+    public static class Builder {
 
-    @Nullable
-    private PermissionListener mPermissionListener;
+        private final String componentName;
+        private Bundle launchOptions;
+
+        public Builder(String componentName) {
+            this.componentName = componentName;
+        }
+
+        public Builder setLaunchOptions(Bundle launchOptions) {
+            this.launchOptions = launchOptions;
+            return this;
+        }
+
+        public ReactFragment build() {
+            return ReactFragment.newInstance(componentName, launchOptions);
+        }
+    }
 
     private ReactNativeHost getReactNativeHost() {
         return ((ReactApplication) getActivity().getApplication()).getReactNativeHost();
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        activity = (AppCompatActivity)context;
         if (getArguments() != null) {
-            mComponentName = getArguments().getString(COMPONENT_NAME);
-            mLaunchOptions = getArguments().getBundle(LAUNCH_OPTIONS);
+            componentName = getArguments().getString(COMPONENT_NAME);
+            launchOptions = getArguments().getBundle(LAUNCH_OPTIONS);
         }
-        if (mComponentName == null) {
+        if (componentName == null) {
             throw new IllegalStateException("Cannot loadApp if component name is null");
         }
-        mDoubleTapReloadRecognizer = new DoubleTapReloadRecognizer();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        doubleTapReloadRecognizer = new DoubleTapReloadRecognizer();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if (mReactRootView == null) {
-            mReactRootView = new RNGestureHandlerEnabledRootView(getActivity());
-            mReactRootView.startReactApplication(
+        if (reactRootView == null) {
+            reactRootView = new RNGestureHandlerEnabledRootView(getActivity());
+            reactRootView.startReactApplication(
                     getReactNativeHost().getReactInstanceManager(),
-                    mComponentName,
-                    mLaunchOptions);
+                    componentName,
+                    launchOptions);
         }
-        return mReactRootView;
+        return reactRootView;
     }
 
     @Override
     public void onResume() {
         super.onResume();
         if (getReactNativeHost().hasInstance()) {
-            getReactNativeHost().getReactInstanceManager().onHostResume(getActivity(), (DefaultHardwareBackBtnHandler) getActivity());
+            getReactNativeHost().getReactInstanceManager()
+                    .onHostResume(activity, (DefaultHardwareBackBtnHandler)activity);
         }
     }
 
@@ -90,16 +115,16 @@ public class ReactFragment extends Fragment implements PermissionAwareActivity {
     public void onPause() {
         super.onPause();
         if (getReactNativeHost().hasInstance()) {
-            getReactNativeHost().getReactInstanceManager().onHostPause(getActivity());
+            getReactNativeHost().getReactInstanceManager().onHostPause(activity);
         }
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mReactRootView != null) {
-            mReactRootView.unmountReactApplication();
-            mReactRootView = null;
+        if (reactRootView != null) {
+            reactRootView.unmountReactApplication();
+            reactRootView = null;
         }
         if (getReactNativeHost().hasInstance()) {
             ReactInstanceManager reactInstanceMgr = getReactNativeHost().getReactInstanceManager();
@@ -115,32 +140,37 @@ public class ReactFragment extends Fragment implements PermissionAwareActivity {
         }
     }
 
-    // region PermissionAwareActivity
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (this.getReactNativeHost().hasInstance()) {
+            this.getReactNativeHost().getReactInstanceManager().onActivityResult(activity, requestCode, resultCode, data);
+        }
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (mPermissionListener != null &&
-                mPermissionListener.onRequestPermissionsResult(requestCode, permissions, grantResults)) {
-            mPermissionListener = null;
+        if (permissionListener != null &&
+                permissionListener.onRequestPermissionsResult(requestCode, permissions, grantResults)) {
+            permissionListener = null;
         }
     }
 
     @Override
     public int checkPermission(String permission, int pid, int uid) {
-        return getActivity().checkPermission(permission, pid, uid);
+        return activity.checkPermission(permission, pid, uid);
     }
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     public int checkSelfPermission(String permission) {
-        return getActivity().checkSelfPermission(permission);
+        return activity.checkSelfPermission(permission);
     }
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     public void requestPermissions(String[] permissions, int requestCode, PermissionListener listener) {
-        mPermissionListener = listener;
+        permissionListener = listener;
         requestPermissions(permissions, requestCode);
     }
 
@@ -158,31 +188,12 @@ public class ReactFragment extends Fragment implements PermissionAwareActivity {
                 getReactNativeHost().getReactInstanceManager().showDevOptionsDialog();
                 handled = true;
             }
-            boolean didDoubleTapR = Assertions.assertNotNull(mDoubleTapReloadRecognizer).didDoubleTapR(keyCode, getActivity().getCurrentFocus());
+            boolean didDoubleTapR = Assertions.assertNotNull(doubleTapReloadRecognizer).didDoubleTapR(keyCode, getActivity().getCurrentFocus());
             if (didDoubleTapR) {
                 getReactNativeHost().getReactInstanceManager().getDevSupportManager().handleReloadJS();
                 handled = true;
             }
         }
         return handled;
-    }
-
-    public static class Builder {
-
-        private final String mComponentName;
-        private Bundle mLaunchOptions;
-
-        public Builder(String componentName) {
-            mComponentName = componentName;
-        }
-
-        public Builder setLaunchOptions(Bundle launchOptions) {
-            mLaunchOptions = launchOptions;
-            return this;
-        }
-
-        public ReactFragment build() {
-            return ReactFragment.newInstance(mComponentName, mLaunchOptions);
-        }
     }
 }
