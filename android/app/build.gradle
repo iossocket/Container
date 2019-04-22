@@ -33,7 +33,8 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.thoughtworks.samplelibrary:samplelibrary:0.0.1'
     implementation 'com.facebook.react:react-native:0.59.3'
-    implementation project(':rnplugin')
+    implementation 'com.thoughtworks.rnplugin:rnplugin:0.0.1'
+    implementation project(':react-native-gesture-handler')
     implementation project(':flutter')
 
     testImplementation 'junit:junit:4.12'

@@ -1,4 +1,4 @@
-include ':app', ':rnplugin'
+include ':app'//, ':rnplugin'
 
 include ':react-native-gesture-handler'
 project(':react-native-gesture-handler').projectDir = new File(rootProject.projectDir, '../rn/node_modules/react-native-gesture-handler/android')
