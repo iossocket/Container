@@ -12,10 +12,6 @@
 		D95AF53922586F0700A3A9AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D95AF53822586F0700A3A9AF /* Assets.xcassets */; };
 		D95AF53C22586F0700A3A9AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95AF53A22586F0700A3A9AF /* LaunchScreen.storyboard */; };
 		D95AF53F22586F0700A3A9AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D95AF53E22586F0700A3A9AF /* main.m */; };
-		D95AF5532258978400A3A9AF /* RNContrainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D95AF5522258978400A3A9AF /* RNContrainer.m */; };
-		D95AF5792259D4BB00A3A9AF /* RNBridgeDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D95AF5782259D4BB00A3A9AF /* RNBridgeDelegate.m */; };
-		D95AF57D2259D52300A3A9AF /* RNBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = D95AF57C2259D52300A3A9AF /* RNBridge.m */; };
-		D95AF580225A34A800A3A9AF /* RNNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = D95AF57F225A34A800A3A9AF /* RNNavigation.m */; };
 		FDB2D054A2CE0A0236AA5DD3 /* DietViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB2D9165BAE1E2BFB781EF1 /* DietViewController.m */; };
 		FDB2D56E87E3BC17E76B6E36 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB2D6CA7642C944ED8FEBFE /* BaseViewController.m */; };
 		FDB2DBD8B9180F0AD1744541 /* DashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FDB2DF89BBB8C4E83504013C /* DashboardViewController.m */; };
@@ -33,14 +29,6 @@
 		D95AF53B22586F0700A3A9AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D95AF53D22586F0700A3A9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D95AF53E22586F0700A3A9AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D95AF5512258978400A3A9AF /* RNContrainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNContrainer.h; sourceTree = "<group>"; };
-		D95AF5522258978400A3A9AF /* RNContrainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNContrainer.m; sourceTree = "<group>"; };
-		D95AF5772259D4BB00A3A9AF /* RNBridgeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNBridgeDelegate.h; sourceTree = "<group>"; };
-		D95AF5782259D4BB00A3A9AF /* RNBridgeDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNBridgeDelegate.m; sourceTree = "<group>"; };
-		D95AF57B2259D52300A3A9AF /* RNBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNBridge.h; sourceTree = "<group>"; };
-		D95AF57C2259D52300A3A9AF /* RNBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNBridge.m; sourceTree = "<group>"; };
-		D95AF57E225A34A800A3A9AF /* RNNavigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNNavigation.h; sourceTree = "<group>"; };
-		D95AF57F225A34A800A3A9AF /* RNNavigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNNavigation.m; sourceTree = "<group>"; };
 		FDB2D6CA7642C944ED8FEBFE /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		FDB2D840ED2F7C4D2971725F /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		FDB2D898B1EB5773ECF75245 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
@@ -116,7 +104,6 @@
 				FDB2D840ED2F7C4D2971725F /* HistoryViewController.h */,
 				FDB2D6CA7642C944ED8FEBFE /* BaseViewController.m */,
 				FDB2DF18BECDD82E70ACB316 /* BaseViewController.h */,
-				D95AF57A2259D4C200A3A9AF /* RNContainer */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -126,21 +113,6 @@
 			children = (
 			);
 			path = Library;
-			sourceTree = "<group>";
-		};
-		D95AF57A2259D4C200A3A9AF /* RNContainer */ = {
-			isa = PBXGroup;
-			children = (
-				D95AF5512258978400A3A9AF /* RNContrainer.h */,
-				D95AF5522258978400A3A9AF /* RNContrainer.m */,
-				D95AF5772259D4BB00A3A9AF /* RNBridgeDelegate.h */,
-				D95AF5782259D4BB00A3A9AF /* RNBridgeDelegate.m */,
-				D95AF57B2259D52300A3A9AF /* RNBridge.h */,
-				D95AF57C2259D52300A3A9AF /* RNBridge.m */,
-				D95AF57E225A34A800A3A9AF /* RNNavigation.h */,
-				D95AF57F225A34A800A3A9AF /* RNNavigation.m */,
-			);
-			path = RNContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +128,7 @@
 				D95AF52922586F0600A3A9AF /* Frameworks */,
 				D95AF52A22586F0600A3A9AF /* Resources */,
 				1A2B281C7671A6C2B4986E77 /* [CP] Embed Pods Frameworks */,
+				FE7C0A4BD08CA87E3CEC8742 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,6 +245,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FE7C0A4BD08CA87E3CEC8742 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Container/Pods-Container-resources.sh",
+				"${PODS_ROOT}/RNSampleFeature/Classes/main.jsbundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/main.jsbundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Container/Pods-Container-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -281,13 +276,9 @@
 			files = (
 				D95AF53F22586F0700A3A9AF /* main.m in Sources */,
 				D95AF53122586F0600A3A9AF /* AppDelegate.m in Sources */,
-				D95AF57D2259D52300A3A9AF /* RNBridge.m in Sources */,
 				FDB2DBD8B9180F0AD1744541 /* DashboardViewController.m in Sources */,
-				D95AF5792259D4BB00A3A9AF /* RNBridgeDelegate.m in Sources */,
 				FDB2D054A2CE0A0236AA5DD3 /* DietViewController.m in Sources */,
 				FDB2DCE5C11E18922979C97C /* HistoryViewController.m in Sources */,
-				D95AF580225A34A800A3A9AF /* RNNavigation.m in Sources */,
-				D95AF5532258978400A3A9AF /* RNContrainer.m in Sources */,
 				FDB2D56E87E3BC17E76B6E36 /* BaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

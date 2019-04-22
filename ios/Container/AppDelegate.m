@@ -10,7 +10,7 @@
 #import "DashboardViewController.h"
 #import "DietViewController.h"
 #import "HistoryViewController.h"
-#import "RNContainer/RNContrainer.h"
+#import "RNContrainer.h"
 #import "DemoService.h"
 
 @interface AppDelegate ()

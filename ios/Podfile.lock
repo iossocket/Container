@@ -57,65 +57,67 @@ PODS:
     - React/Core
     - React/fishhook
     - React/RCTBlob
+  - ReactNativePlugin (0.59.3):
+    - DoubleConversion (= 1.1.6)
+    - Folly (= 2018.10.22.00)
+    - glog (= 0.3.5)
+    - React/Core (= 0.59.3)
+    - React/CxxBridge (= 0.59.3)
+    - React/DevSupport (= 0.59.3)
+    - React/RCTAnimation (= 0.59.3)
+    - React/RCTImage (= 0.59.3)
+    - React/RCTLinkingIOS (= 0.59.3)
+    - React/RCTNetwork (= 0.59.3)
+    - React/RCTText (= 0.59.3)
+    - React/RCTWebSocket (= 0.59.3)
+    - yoga (= 0.59.3.React)
   - RNGestureHandler (1.1.0):
     - React
+  - RNSampleFeature (0.0.1):
+    - ReactNativePlugin (= 0.59.3)
   - yoga (0.59.3.React)
 
 DEPENDENCIES:
-  - DoubleConversion (from `../rn/node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - Flutter (from `../flutter/.ios/Flutter/engine`)
   - FlutterPluginRegistrant (from `../flutter/.ios/Flutter/FlutterPluginRegistrant`)
-  - Folly (from `../rn/node_modules/react-native/third-party-podspecs/Folly.podspec`)
-  - glog (from `../rn/node_modules/react-native/third-party-podspecs/glog.podspec`)
   - PodSample
-  - React/Core (from `../rn/node_modules/react-native`)
-  - React/CxxBridge (from `../rn/node_modules/react-native`)
-  - React/DevSupport (from `../rn/node_modules/react-native`)
-  - React/RCTAnimation (from `../rn/node_modules/react-native`)
-  - React/RCTImage (from `../rn/node_modules/react-native`)
-  - React/RCTLinkingIOS (from `../rn/node_modules/react-native`)
-  - React/RCTNetwork (from `../rn/node_modules/react-native`)
-  - React/RCTText (from `../rn/node_modules/react-native`)
-  - React/RCTWebSocket (from `../rn/node_modules/react-native`)
   - RNGestureHandler (from `../rn/node_modules/react-native-gesture-handler`)
-  - yoga (from `../rn/node_modules/react-native/ReactCommon/yoga`)
+  - RNSampleFeature (= 0.0.1)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - boost-for-react-native
   https://github.com/iossocket/TWRepo.git:
+    - boost-for-react-native
+    - DoubleConversion
+    - Folly
+    - glog
     - PodSample
+    - React
+    - ReactNativePlugin
+    - RNSampleFeature
+    - yoga
 
 EXTERNAL SOURCES:
-  DoubleConversion:
-    :podspec: "../rn/node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   Flutter:
     :path: "../flutter/.ios/Flutter/engine"
   FlutterPluginRegistrant:
     :path: "../flutter/.ios/Flutter/FlutterPluginRegistrant"
-  Folly:
-    :podspec: "../rn/node_modules/react-native/third-party-podspecs/Folly.podspec"
-  glog:
-    :podspec: "../rn/node_modules/react-native/third-party-podspecs/glog.podspec"
-  React:
-    :path: "../rn/node_modules/react-native"
   RNGestureHandler:
     :path: "../rn/node_modules/react-native-gesture-handler"
-  yoga:
-    :path: "../rn/node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
-  DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
+  boost-for-react-native: 34fb5e81e639b9bf106cf91bccd74a4a4a6a9404
+  DoubleConversion: f667477bface883238976991f46105fcacc96d56
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
   FlutterPluginRegistrant: 3f4d45b679eb21eb53e786e8884a26157555ce9f
-  Folly: de497beb10f102453a1afa9edbf8cf8a251890de
-  glog: aefd1eb5dda2ab95ba0938556f34b98e2da3a60d
+  Folly: 391015f9b49dcda4ab622abb43ee71ab77c96269
+  glog: 3910be5a35ef6ebad63f2cdd0c6d1ccf6cf651d1
   PodSample: 28b799dec39995a7f5a80ef0661491bdfd59cd40
-  React: b52fdb80565505b7e4592b313a38868f5df51641
+  React: 0469a03bca152a1028d6b619891edb2ada002e09
+  ReactNativePlugin: 844ad4ab965892ffc580fae8551c9e67e32d7315
   RNGestureHandler: b65d391f4f570178d657b99a16ec99d09b8656b0
-  yoga: 1a492113f66a35e9e583bb0434f4b8cc668dd839
+  RNSampleFeature: 8071c356d1bacd5b146565015c20a80451113e4b
+  yoga: 33adfb1d1c5a921240262365300e3853de93fca1
 
-PODFILE CHECKSUM: 2551765c7dff78cb7796ca9105bd0fc12abf941f
+PODFILE CHECKSUM: f1e10099c339fc3a6c258f26725933fa401ca9fe
 
 COCOAPODS: 1.6.1
