@@ -8,10 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 
-import com.facebook.react.ReactRootView;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
-import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
-import com.thoughtworks.container.application.MainApplication;
 import com.thoughtworks.rnplugin.ReactFragment;
 import com.thoughtworks.samplelibrary.DemoService;
 
@@ -24,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
     private ReactFragment inboxFragment;
     private MapFragment mapFragment;
     private FlutterFragment flutterFragment;
-    private ReactRootView mReactRootView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,12 +46,6 @@ public class MainActivity extends AppCompatActivity implements DefaultHardwareBa
             }
             return false;
         });
-
-        mReactRootView = new RNGestureHandlerEnabledRootView(MainActivity.this);
-        mReactRootView.startReactApplication(
-                ((MainApplication)getApplication()).getReactNativeHost().getReactInstanceManager(),
-                "Home",
-                null);
         bottomNavigationView.setSelectedItemId(R.id.navigation_dashboard);
     }
 

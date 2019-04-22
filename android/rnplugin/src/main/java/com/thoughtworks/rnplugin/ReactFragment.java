@@ -67,7 +67,8 @@ public class ReactFragment extends Fragment implements PermissionAwareActivity {
     }
 
     private ReactNativeHost getReactNativeHost() {
-        return ((ReactApplication) getActivity().getApplication()).getReactNativeHost();
+        RNPluginApplication application = (RNPluginApplication)activity.getApplication();
+        return application.getReactNativeContainer().getReactNativeHost();
     }
 
     @Override
