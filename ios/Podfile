@@ -1,11 +1,11 @@
 # Uncomment the next line to define a global platform for your project
-source ‘https://github.com/iossocket/TWRepo.git’
+source 'https://github.com/iossocket/TWRepo.git'
 
 platform :ios, '9.0'
 
 target 'Container' do
   pod 'PodSample'
-  pod 'RNSampleFeature', '0.0.1'
+  pod 'ReactNativePlugin', '0.59.3'
   pod 'RNGestureHandler', :path => '../rn/node_modules/react-native-gesture-handler'
 
   # Flutter

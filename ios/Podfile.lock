@@ -73,16 +73,14 @@ PODS:
     - yoga (= 0.59.3.React)
   - RNGestureHandler (1.1.0):
     - React
-  - RNSampleFeature (0.0.1):
-    - ReactNativePlugin (= 0.59.3)
   - yoga (0.59.3.React)
 
 DEPENDENCIES:
   - Flutter (from `../flutter/.ios/Flutter/engine`)
   - FlutterPluginRegistrant (from `../flutter/.ios/Flutter/FlutterPluginRegistrant`)
   - PodSample
+  - ReactNativePlugin (= 0.59.3)
   - RNGestureHandler (from `../rn/node_modules/react-native-gesture-handler`)
-  - RNSampleFeature (= 0.0.1)
 
 SPEC REPOS:
   https://github.com/iossocket/TWRepo.git:
@@ -93,7 +91,6 @@ SPEC REPOS:
     - PodSample
     - React
     - ReactNativePlugin
-    - RNSampleFeature
     - yoga
 
 EXTERNAL SOURCES:
@@ -115,9 +112,8 @@ SPEC CHECKSUMS:
   React: 0469a03bca152a1028d6b619891edb2ada002e09
   ReactNativePlugin: 844ad4ab965892ffc580fae8551c9e67e32d7315
   RNGestureHandler: b65d391f4f570178d657b99a16ec99d09b8656b0
-  RNSampleFeature: 8071c356d1bacd5b146565015c20a80451113e4b
   yoga: 33adfb1d1c5a921240262365300e3853de93fca1
 
-PODFILE CHECKSUM: f1e10099c339fc3a6c258f26725933fa401ca9fe
+PODFILE CHECKSUM: 3778e4f10121678f51d4c43bcb5dcb0a991c1ae6
 
 COCOAPODS: 1.6.1

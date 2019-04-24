@@ -6,7 +6,6 @@
 #import "DashboardViewController.h"
 #import "RNContrainer.h"
 #import "DemoViewController.h"
-#import "SimpleRNController.h"
 #import "RNPluginConfig.h"
 
 @interface DashboardViewController ()
@@ -44,7 +43,7 @@
 }
 
 - (void)showNativePage {
-    UIViewController *vc = [[SimpleRNController new] simpleRNViewController];
+    UIViewController *vc = [DemoViewController new];
     [self showViewController:vc sender:nil];
 }
 
